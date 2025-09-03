@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Ufficio</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header><h1>Dashboard Ufficio</h1></header>
+    <main>
+        <form method="GET">
+            <label>Filtra per macchina:</label>
+            <select name="macchina">
+                <option value="">Tutte</option>
+                <option value="Tornio">Tornio</option>
+                <option value="Piana">Piana</option>
+                <option value="Rotativa">Rotativa</option>
+                <option value="Taglierina">Taglierina</option>
+            </select>
+            <button type="submit">Filtra</button>
+        </form>
+        {% for lav in lavorazioni %}
+        <section class="card">
+            <h3>{{ lav.descrizione }} - {{ lav.macchina }}</h3>
+            <p>Data richiesta: {{ lav.data_richiesta }}</p>
+            <form method="POST" action="/richiedi_data/{{ lav.id }}">
+                <label>Richiedi data:</label><input type="date" name="data_richiesta">
+                <button type="submit">Invia</button>
+            </form>
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>

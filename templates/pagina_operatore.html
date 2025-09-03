@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Operatore - M5 Biadesivi</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>M5 Biadesivi - Operatore</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Inserisci nuova lavorazione</h2>
+            <form id="nuovaLavorazioneForm">
+                <label for="macchina">Macchina:</label>
+                <select id="macchina" name="macchina" required>
+                    <option value="tornio">Tornio</option>
+                    <option value="piana">Piana</option>
+                    <option value="rotativa">Rotativa</option>
+                    <option value="taglierina">Taglierina</option>
+                </select>
+                <label for="descrizione">Descrizione:</label>
+                <input type="text" id="descrizione" name="descrizione" required>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required>
+                <button type="submit">Inserisci</button>
+            </form>
+        </section>
+        <section>
+            <h2>Lavorazioni della tua macchina</h2>
+            <table id="tabellaOperatore">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrizione</th>
+                        <th>Data</th>
+                        <th>Modifica</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Popolato dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <script src="static/operatore.js"></script>
+</body>
+</html>

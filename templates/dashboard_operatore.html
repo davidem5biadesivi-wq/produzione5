@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard Operatore</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header><h1>Dashboard Operatore</h1></header>
+    <main>
+        {% for lav in lavorazioni %}
+        <section class="card">
+            <h3>{{ lav.descrizione }}</h3>
+            <form method="POST" action="/modifica_lavorazione/{{ lav.id }}">
+                <label>Cliente:</label><input type="text" name="cliente" value="{{ lav.cliente }}"><br>
+                <label>Ordine:</label><input type="text" name="ordine" value="{{ lav.ordine }}"><br>
+                <label>Codice Articolo:</label><input type="text" name="codice_articolo" value="{{ lav.codice_articolo }}"><br>
+                <label>Data Consegna:</label><input type="date" name="data_consegna" value="{{ lav.data_consegna }}"><br>
+                <button type="submit">Salva</button>
+            </form>
+        </section>
+        {% endfor %}
+    </main>
+</body>
+</html>

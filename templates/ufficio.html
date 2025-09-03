@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Ufficio - M5 Biadesivi</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>M5 Biadesivi - Ufficio</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Filtra lavorazioni per macchina</h2>
+            <select id="macchinaFiltro" onchange="filtraMacchina()">
+                <option value="tutte">Tutte</option>
+                <option value="tornio">Tornio</option>
+                <option value="piana">Piana</option>
+                <option value="rotativa">Rotativa</option>
+                <option value="taglierina">Taglierina</option>
+            </select>
+        </section>
+        <section>
+            <h2>Lavorazioni</h2>
+            <table id="tabellaLavorazioni">
+                <thead>
+                    <tr>
+                        <th>Macchina</th>
+                        <th>Descrizione</th>
+                        <th>Data richiesta</th>
+                        <th>Azioni</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Popolato dinamicamente -->
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Richiedi data per lavorazione</h2>
+            <form id="richiestaDataForm">
+                <label for="idLavorazione">ID lavorazione:</label>
+                <input type="text" id="idLavorazione" name="idLavorazione" required>
+                <label for="dataRichiesta">Data richiesta:</label>
+                <input type="date" id="dataRichiesta" name="dataRichiesta" required>
+                <button type="submit">Invia richiesta</button>
+            </form>
+        </section>
+    </main>
+    <script src="static/ufficio.js"></script>
+</body>
+</html>
